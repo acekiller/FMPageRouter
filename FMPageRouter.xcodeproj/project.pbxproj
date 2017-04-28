@@ -54,6 +54,8 @@
 		188B0E2A1EB32B3F002691AC /* FMPageRouterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FMPageRouterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		188B0E2E1EB32B3F002691AC /* FMPageRouterUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMPageRouterUITests.m; sourceTree = "<group>"; };
 		188B0E301EB32B3F002691AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		188B0E431EB334D4002691AC /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		188B0E451EB334DD002691AC /* FMPageRouter.vpp */ = {isa = PBXFileReference; lastKnownFileType = file; name = FMPageRouter.vpp; path = paradigm/FMPageRouter.vpp; sourceTree = "<group>"; };
 		1D10F2B2D568A2A1E21BBE96 /* Pods-FMPageRouter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FMPageRouter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FMPageRouter/Pods-FMPageRouter.debug.xcconfig"; sourceTree = "<group>"; };
 		330BB8F999BE5EB9360C79C0 /* Pods-FMPageRouterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FMPageRouterTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FMPageRouterTests/Pods-FMPageRouterTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3841BE0FBD0329AD8A02E25D /* Pods-FMPageRouterUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FMPageRouterUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FMPageRouterUITests/Pods-FMPageRouterUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -96,6 +98,8 @@
 		188B0DFD1EB32B3F002691AC = {
 			isa = PBXGroup;
 			children = (
+				188B0E451EB334DD002691AC /* FMPageRouter.vpp */,
+				188B0E431EB334D4002691AC /* README.md */,
 				188B0E081EB32B3F002691AC /* FMPageRouter */,
 				188B0E221EB32B3F002691AC /* FMPageRouterTests */,
 				188B0E2D1EB32B3F002691AC /* FMPageRouterUITests */,
@@ -707,6 +711,7 @@
 				188B0E351EB32B3F002691AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		188B0E361EB32B3F002691AC /* Build configuration list for PBXNativeTarget "FMPageRouterTests" */ = {
 			isa = XCConfigurationList;
@@ -715,6 +720,7 @@
 				188B0E381EB32B3F002691AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		188B0E391EB32B3F002691AC /* Build configuration list for PBXNativeTarget "FMPageRouterUITests" */ = {
 			isa = XCConfigurationList;
@@ -723,6 +729,7 @@
 				188B0E3B1EB32B3F002691AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
