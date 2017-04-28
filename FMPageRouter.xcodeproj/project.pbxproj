@@ -1,0 +1,730 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1276D39E7066FCA1CB7A9566 /* libPods-FMPageRouterTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AF65A7F58CAF37750217F8C0 /* libPods-FMPageRouterTests.a */; };
+		188B0E0B1EB32B3F002691AC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 188B0E0A1EB32B3F002691AC /* main.m */; };
+		188B0E0E1EB32B3F002691AC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 188B0E0D1EB32B3F002691AC /* AppDelegate.m */; };
+		188B0E111EB32B3F002691AC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 188B0E101EB32B3F002691AC /* ViewController.m */; };
+		188B0E141EB32B3F002691AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 188B0E121EB32B3F002691AC /* Main.storyboard */; };
+		188B0E161EB32B3F002691AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 188B0E151EB32B3F002691AC /* Assets.xcassets */; };
+		188B0E191EB32B3F002691AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 188B0E171EB32B3F002691AC /* LaunchScreen.storyboard */; };
+		188B0E241EB32B3F002691AC /* FMPageRouterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 188B0E231EB32B3F002691AC /* FMPageRouterTests.m */; };
+		188B0E2F1EB32B3F002691AC /* FMPageRouterUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 188B0E2E1EB32B3F002691AC /* FMPageRouterUITests.m */; };
+		3074DEA747C4B187FA0947A0 /* libPods-FMPageRouterUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4271731ADA14392848DFEAAB /* libPods-FMPageRouterUITests.a */; };
+		C1685F34D4EA11096EDA8C6E /* libPods-FMPageRouter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 812537E881225AC7E400A0BC /* libPods-FMPageRouter.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		188B0E201EB32B3F002691AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 188B0DFE1EB32B3F002691AC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 188B0E051EB32B3F002691AC;
+			remoteInfo = FMPageRouter;
+		};
+		188B0E2B1EB32B3F002691AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 188B0DFE1EB32B3F002691AC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 188B0E051EB32B3F002691AC;
+			remoteInfo = FMPageRouter;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		188B0E061EB32B3F002691AC /* FMPageRouter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FMPageRouter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		188B0E0A1EB32B3F002691AC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		188B0E0C1EB32B3F002691AC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		188B0E0D1EB32B3F002691AC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		188B0E0F1EB32B3F002691AC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		188B0E101EB32B3F002691AC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		188B0E131EB32B3F002691AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		188B0E151EB32B3F002691AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		188B0E181EB32B3F002691AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		188B0E1A1EB32B3F002691AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		188B0E1F1EB32B3F002691AC /* FMPageRouterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FMPageRouterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		188B0E231EB32B3F002691AC /* FMPageRouterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMPageRouterTests.m; sourceTree = "<group>"; };
+		188B0E251EB32B3F002691AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		188B0E2A1EB32B3F002691AC /* FMPageRouterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FMPageRouterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		188B0E2E1EB32B3F002691AC /* FMPageRouterUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMPageRouterUITests.m; sourceTree = "<group>"; };
+		188B0E301EB32B3F002691AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1D10F2B2D568A2A1E21BBE96 /* Pods-FMPageRouter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FMPageRouter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FMPageRouter/Pods-FMPageRouter.debug.xcconfig"; sourceTree = "<group>"; };
+		330BB8F999BE5EB9360C79C0 /* Pods-FMPageRouterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FMPageRouterTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FMPageRouterTests/Pods-FMPageRouterTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3841BE0FBD0329AD8A02E25D /* Pods-FMPageRouterUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FMPageRouterUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FMPageRouterUITests/Pods-FMPageRouterUITests.release.xcconfig"; sourceTree = "<group>"; };
+		4271731ADA14392848DFEAAB /* libPods-FMPageRouterUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FMPageRouterUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		45133A88EEE73A2183513A2E /* Pods-FMPageRouterUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FMPageRouterUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FMPageRouterUITests/Pods-FMPageRouterUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		812537E881225AC7E400A0BC /* libPods-FMPageRouter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FMPageRouter.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		933DB1B7EEE84587573E09BF /* Pods-FMPageRouter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FMPageRouter.release.xcconfig"; path = "Pods/Target Support Files/Pods-FMPageRouter/Pods-FMPageRouter.release.xcconfig"; sourceTree = "<group>"; };
+		AF65A7F58CAF37750217F8C0 /* libPods-FMPageRouterTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FMPageRouterTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2AD7123ECB5D5B118DC6CBA /* Pods-FMPageRouterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FMPageRouterTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FMPageRouterTests/Pods-FMPageRouterTests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		188B0E031EB32B3F002691AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1685F34D4EA11096EDA8C6E /* libPods-FMPageRouter.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		188B0E1C1EB32B3F002691AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1276D39E7066FCA1CB7A9566 /* libPods-FMPageRouterTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		188B0E271EB32B3F002691AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3074DEA747C4B187FA0947A0 /* libPods-FMPageRouterUITests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		188B0DFD1EB32B3F002691AC = {
+			isa = PBXGroup;
+			children = (
+				188B0E081EB32B3F002691AC /* FMPageRouter */,
+				188B0E221EB32B3F002691AC /* FMPageRouterTests */,
+				188B0E2D1EB32B3F002691AC /* FMPageRouterUITests */,
+				188B0E071EB32B3F002691AC /* Products */,
+				B090D489B28A376BE076604C /* Pods */,
+				9BE06FAB86C9AE536D9DBB3B /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		188B0E071EB32B3F002691AC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				188B0E061EB32B3F002691AC /* FMPageRouter.app */,
+				188B0E1F1EB32B3F002691AC /* FMPageRouterTests.xctest */,
+				188B0E2A1EB32B3F002691AC /* FMPageRouterUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		188B0E081EB32B3F002691AC /* FMPageRouter */ = {
+			isa = PBXGroup;
+			children = (
+				188B0E0C1EB32B3F002691AC /* AppDelegate.h */,
+				188B0E0D1EB32B3F002691AC /* AppDelegate.m */,
+				188B0E0F1EB32B3F002691AC /* ViewController.h */,
+				188B0E101EB32B3F002691AC /* ViewController.m */,
+				188B0E121EB32B3F002691AC /* Main.storyboard */,
+				188B0E151EB32B3F002691AC /* Assets.xcassets */,
+				188B0E171EB32B3F002691AC /* LaunchScreen.storyboard */,
+				188B0E1A1EB32B3F002691AC /* Info.plist */,
+				188B0E091EB32B3F002691AC /* Supporting Files */,
+			);
+			path = FMPageRouter;
+			sourceTree = "<group>";
+		};
+		188B0E091EB32B3F002691AC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				188B0E0A1EB32B3F002691AC /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		188B0E221EB32B3F002691AC /* FMPageRouterTests */ = {
+			isa = PBXGroup;
+			children = (
+				188B0E231EB32B3F002691AC /* FMPageRouterTests.m */,
+				188B0E251EB32B3F002691AC /* Info.plist */,
+			);
+			path = FMPageRouterTests;
+			sourceTree = "<group>";
+		};
+		188B0E2D1EB32B3F002691AC /* FMPageRouterUITests */ = {
+			isa = PBXGroup;
+			children = (
+				188B0E2E1EB32B3F002691AC /* FMPageRouterUITests.m */,
+				188B0E301EB32B3F002691AC /* Info.plist */,
+			);
+			path = FMPageRouterUITests;
+			sourceTree = "<group>";
+		};
+		9BE06FAB86C9AE536D9DBB3B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				812537E881225AC7E400A0BC /* libPods-FMPageRouter.a */,
+				AF65A7F58CAF37750217F8C0 /* libPods-FMPageRouterTests.a */,
+				4271731ADA14392848DFEAAB /* libPods-FMPageRouterUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B090D489B28A376BE076604C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1D10F2B2D568A2A1E21BBE96 /* Pods-FMPageRouter.debug.xcconfig */,
+				933DB1B7EEE84587573E09BF /* Pods-FMPageRouter.release.xcconfig */,
+				330BB8F999BE5EB9360C79C0 /* Pods-FMPageRouterTests.debug.xcconfig */,
+				C2AD7123ECB5D5B118DC6CBA /* Pods-FMPageRouterTests.release.xcconfig */,
+				45133A88EEE73A2183513A2E /* Pods-FMPageRouterUITests.debug.xcconfig */,
+				3841BE0FBD0329AD8A02E25D /* Pods-FMPageRouterUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		188B0E051EB32B3F002691AC /* FMPageRouter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 188B0E331EB32B3F002691AC /* Build configuration list for PBXNativeTarget "FMPageRouter" */;
+			buildPhases = (
+				619501A9847472DFCFC6F0DE /* [CP] Check Pods Manifest.lock */,
+				188B0E021EB32B3F002691AC /* Sources */,
+				188B0E031EB32B3F002691AC /* Frameworks */,
+				188B0E041EB32B3F002691AC /* Resources */,
+				6A18E57B7DD3319094E69502 /* [CP] Embed Pods Frameworks */,
+				D85CF031B527EFFA2AB6CD1C /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FMPageRouter;
+			productName = FMPageRouter;
+			productReference = 188B0E061EB32B3F002691AC /* FMPageRouter.app */;
+			productType = "com.apple.product-type.application";
+		};
+		188B0E1E1EB32B3F002691AC /* FMPageRouterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 188B0E361EB32B3F002691AC /* Build configuration list for PBXNativeTarget "FMPageRouterTests" */;
+			buildPhases = (
+				6CF4EBB998FA70E9FBDD95E6 /* [CP] Check Pods Manifest.lock */,
+				188B0E1B1EB32B3F002691AC /* Sources */,
+				188B0E1C1EB32B3F002691AC /* Frameworks */,
+				188B0E1D1EB32B3F002691AC /* Resources */,
+				89869F47D228363069BE77B0 /* [CP] Embed Pods Frameworks */,
+				CB2393EDDB434646E0D78F21 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				188B0E211EB32B3F002691AC /* PBXTargetDependency */,
+			);
+			name = FMPageRouterTests;
+			productName = FMPageRouterTests;
+			productReference = 188B0E1F1EB32B3F002691AC /* FMPageRouterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		188B0E291EB32B3F002691AC /* FMPageRouterUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 188B0E391EB32B3F002691AC /* Build configuration list for PBXNativeTarget "FMPageRouterUITests" */;
+			buildPhases = (
+				BADCA54BEE6C7B2AFB70C4D0 /* [CP] Check Pods Manifest.lock */,
+				188B0E261EB32B3F002691AC /* Sources */,
+				188B0E271EB32B3F002691AC /* Frameworks */,
+				188B0E281EB32B3F002691AC /* Resources */,
+				0EC2106EBAA93432D701E467 /* [CP] Embed Pods Frameworks */,
+				7F7AC83B4ABC931FFBAE1597 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				188B0E2C1EB32B3F002691AC /* PBXTargetDependency */,
+			);
+			name = FMPageRouterUITests;
+			productName = FMPageRouterUITests;
+			productReference = 188B0E2A1EB32B3F002691AC /* FMPageRouterUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		188B0DFE1EB32B3F002691AC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = fantasy;
+				TargetAttributes = {
+					188B0E051EB32B3F002691AC = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = S7VSUA36LS;
+						ProvisioningStyle = Manual;
+					};
+					188B0E1E1EB32B3F002691AC = {
+						CreatedOnToolsVersion = 8.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 188B0E051EB32B3F002691AC;
+					};
+					188B0E291EB32B3F002691AC = {
+						CreatedOnToolsVersion = 8.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 188B0E051EB32B3F002691AC;
+					};
+				};
+			};
+			buildConfigurationList = 188B0E011EB32B3F002691AC /* Build configuration list for PBXProject "FMPageRouter" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 188B0DFD1EB32B3F002691AC;
+			productRefGroup = 188B0E071EB32B3F002691AC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				188B0E051EB32B3F002691AC /* FMPageRouter */,
+				188B0E1E1EB32B3F002691AC /* FMPageRouterTests */,
+				188B0E291EB32B3F002691AC /* FMPageRouterUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		188B0E041EB32B3F002691AC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				188B0E191EB32B3F002691AC /* LaunchScreen.storyboard in Resources */,
+				188B0E161EB32B3F002691AC /* Assets.xcassets in Resources */,
+				188B0E141EB32B3F002691AC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		188B0E1D1EB32B3F002691AC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		188B0E281EB32B3F002691AC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0EC2106EBAA93432D701E467 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FMPageRouterUITests/Pods-FMPageRouterUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		619501A9847472DFCFC6F0DE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6A18E57B7DD3319094E69502 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FMPageRouter/Pods-FMPageRouter-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6CF4EBB998FA70E9FBDD95E6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7F7AC83B4ABC931FFBAE1597 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FMPageRouterUITests/Pods-FMPageRouterUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		89869F47D228363069BE77B0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FMPageRouterTests/Pods-FMPageRouterTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BADCA54BEE6C7B2AFB70C4D0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CB2393EDDB434646E0D78F21 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FMPageRouterTests/Pods-FMPageRouterTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D85CF031B527EFFA2AB6CD1C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FMPageRouter/Pods-FMPageRouter-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		188B0E021EB32B3F002691AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				188B0E111EB32B3F002691AC /* ViewController.m in Sources */,
+				188B0E0E1EB32B3F002691AC /* AppDelegate.m in Sources */,
+				188B0E0B1EB32B3F002691AC /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		188B0E1B1EB32B3F002691AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				188B0E241EB32B3F002691AC /* FMPageRouterTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		188B0E261EB32B3F002691AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				188B0E2F1EB32B3F002691AC /* FMPageRouterUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		188B0E211EB32B3F002691AC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 188B0E051EB32B3F002691AC /* FMPageRouter */;
+			targetProxy = 188B0E201EB32B3F002691AC /* PBXContainerItemProxy */;
+		};
+		188B0E2C1EB32B3F002691AC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 188B0E051EB32B3F002691AC /* FMPageRouter */;
+			targetProxy = 188B0E2B1EB32B3F002691AC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		188B0E121EB32B3F002691AC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				188B0E131EB32B3F002691AC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		188B0E171EB32B3F002691AC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				188B0E181EB32B3F002691AC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		188B0E311EB32B3F002691AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		188B0E321EB32B3F002691AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		188B0E341EB32B3F002691AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D10F2B2D568A2A1E21BBE96 /* Pods-FMPageRouter.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = S7VSUA36LS;
+				INFOPLIST_FILE = FMPageRouter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.fantasy.FMPageRouter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "c364e5e6-9d05-4fe8-8072-81f046711232";
+				PROVISIONING_PROFILE_SPECIFIER = demoDev;
+			};
+			name = Debug;
+		};
+		188B0E351EB32B3F002691AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 933DB1B7EEE84587573E09BF /* Pods-FMPageRouter.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = S7VSUA36LS;
+				INFOPLIST_FILE = FMPageRouter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.fantasy.FMPageRouter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "c364e5e6-9d05-4fe8-8072-81f046711232";
+				PROVISIONING_PROFILE_SPECIFIER = demoDev;
+			};
+			name = Release;
+		};
+		188B0E371EB32B3F002691AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 330BB8F999BE5EB9360C79C0 /* Pods-FMPageRouterTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = FMPageRouterTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.fantasy.FMPageRouterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FMPageRouter.app/FMPageRouter";
+			};
+			name = Debug;
+		};
+		188B0E381EB32B3F002691AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C2AD7123ECB5D5B118DC6CBA /* Pods-FMPageRouterTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = FMPageRouterTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.fantasy.FMPageRouterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FMPageRouter.app/FMPageRouter";
+			};
+			name = Release;
+		};
+		188B0E3A1EB32B3F002691AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 45133A88EEE73A2183513A2E /* Pods-FMPageRouterUITests.debug.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = FMPageRouterUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.fantasy.FMPageRouterUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = FMPageRouter;
+			};
+			name = Debug;
+		};
+		188B0E3B1EB32B3F002691AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3841BE0FBD0329AD8A02E25D /* Pods-FMPageRouterUITests.release.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = FMPageRouterUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.fantasy.FMPageRouterUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = FMPageRouter;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		188B0E011EB32B3F002691AC /* Build configuration list for PBXProject "FMPageRouter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				188B0E311EB32B3F002691AC /* Debug */,
+				188B0E321EB32B3F002691AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		188B0E331EB32B3F002691AC /* Build configuration list for PBXNativeTarget "FMPageRouter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				188B0E341EB32B3F002691AC /* Debug */,
+				188B0E351EB32B3F002691AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		188B0E361EB32B3F002691AC /* Build configuration list for PBXNativeTarget "FMPageRouterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				188B0E371EB32B3F002691AC /* Debug */,
+				188B0E381EB32B3F002691AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		188B0E391EB32B3F002691AC /* Build configuration list for PBXNativeTarget "FMPageRouterUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				188B0E3A1EB32B3F002691AC /* Debug */,
+				188B0E3B1EB32B3F002691AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 188B0DFE1EB32B3F002691AC /* Project object */;
+}
