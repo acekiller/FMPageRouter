@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		1276D39E7066FCA1CB7A9566 /* libPods-FMPageRouterTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AF65A7F58CAF37750217F8C0 /* libPods-FMPageRouterTests.a */; };
+		186C96251EB882C100FE0B82 /* UIViewController+FMRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 186C96241EB882C100FE0B82 /* UIViewController+FMRouter.m */; };
+		186C96281EB882EE00FE0B82 /* FMRouterURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 186C96271EB882EE00FE0B82 /* FMRouterURL.m */; };
+		186C962C1EB8889600FE0B82 /* FMPageRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 186C962B1EB8889600FE0B82 /* FMPageRouter.m */; };
+		186C96301EB88BA300FE0B82 /* NSString+FMRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 186C962F1EB88BA300FE0B82 /* NSString+FMRouter.m */; };
+		186C96331EB8951D00FE0B82 /* NSArray+FMRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 186C96321EB8951D00FE0B82 /* NSArray+FMRouter.m */; };
+		186C96361EB8958100FE0B82 /* NSNull+FMRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 186C96351EB8958100FE0B82 /* NSNull+FMRouter.m */; };
+		187B93CD1EBB162D007AA68B /* UIWebViewExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 187B93CC1EBB162D007AA68B /* UIWebViewExtension.m */; };
 		188B0E0B1EB32B3F002691AC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 188B0E0A1EB32B3F002691AC /* main.m */; };
 		188B0E0E1EB32B3F002691AC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 188B0E0D1EB32B3F002691AC /* AppDelegate.m */; };
 		188B0E111EB32B3F002691AC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 188B0E101EB32B3F002691AC /* ViewController.m */; };
@@ -38,6 +45,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		186C96231EB882C100FE0B82 /* UIViewController+FMRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+FMRouter.h"; sourceTree = "<group>"; };
+		186C96241EB882C100FE0B82 /* UIViewController+FMRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+FMRouter.m"; sourceTree = "<group>"; };
+		186C96261EB882EE00FE0B82 /* FMRouterURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMRouterURL.h; sourceTree = "<group>"; };
+		186C96271EB882EE00FE0B82 /* FMRouterURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMRouterURL.m; sourceTree = "<group>"; };
+		186C962A1EB8889600FE0B82 /* FMPageRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMPageRouter.h; sourceTree = "<group>"; };
+		186C962B1EB8889600FE0B82 /* FMPageRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMPageRouter.m; sourceTree = "<group>"; };
+		186C962E1EB88BA300FE0B82 /* NSString+FMRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FMRouter.h"; sourceTree = "<group>"; };
+		186C962F1EB88BA300FE0B82 /* NSString+FMRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FMRouter.m"; sourceTree = "<group>"; };
+		186C96311EB8951D00FE0B82 /* NSArray+FMRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+FMRouter.h"; sourceTree = "<group>"; };
+		186C96321EB8951D00FE0B82 /* NSArray+FMRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+FMRouter.m"; sourceTree = "<group>"; };
+		186C96341EB8958100FE0B82 /* NSNull+FMRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNull+FMRouter.h"; sourceTree = "<group>"; };
+		186C96351EB8958100FE0B82 /* NSNull+FMRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNull+FMRouter.m"; sourceTree = "<group>"; };
+		186C96371EB8960F00FE0B82 /* FMRouterExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMRouterExtensions.h; sourceTree = "<group>"; };
+		187B93CB1EBB162D007AA68B /* UIWebViewExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIWebViewExtension.h; sourceTree = "<group>"; };
+		187B93CC1EBB162D007AA68B /* UIWebViewExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIWebViewExtension.m; sourceTree = "<group>"; };
 		188B0E061EB32B3F002691AC /* FMPageRouter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FMPageRouter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		188B0E0A1EB32B3F002691AC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		188B0E0C1EB32B3F002691AC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -95,6 +117,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		186C961C1EB8827700FE0B82 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				186C962D1EB88B8E00FE0B82 /* Extensions */,
+				186C96291EB8861100FE0B82 /* ObjectMapping */,
+				186C96231EB882C100FE0B82 /* UIViewController+FMRouter.h */,
+				186C96241EB882C100FE0B82 /* UIViewController+FMRouter.m */,
+				186C96261EB882EE00FE0B82 /* FMRouterURL.h */,
+				186C96271EB882EE00FE0B82 /* FMRouterURL.m */,
+				186C962A1EB8889600FE0B82 /* FMPageRouter.h */,
+				186C962B1EB8889600FE0B82 /* FMPageRouter.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		186C96291EB8861100FE0B82 /* ObjectMapping */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ObjectMapping;
+			sourceTree = "<group>";
+		};
+		186C962D1EB88B8E00FE0B82 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				186C962E1EB88BA300FE0B82 /* NSString+FMRouter.h */,
+				186C962F1EB88BA300FE0B82 /* NSString+FMRouter.m */,
+				186C96311EB8951D00FE0B82 /* NSArray+FMRouter.h */,
+				186C96321EB8951D00FE0B82 /* NSArray+FMRouter.m */,
+				186C96341EB8958100FE0B82 /* NSNull+FMRouter.h */,
+				186C96351EB8958100FE0B82 /* NSNull+FMRouter.m */,
+				186C96371EB8960F00FE0B82 /* FMRouterExtensions.h */,
+				187B93CB1EBB162D007AA68B /* UIWebViewExtension.h */,
+				187B93CC1EBB162D007AA68B /* UIWebViewExtension.m */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		188B0DFD1EB32B3F002691AC = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +182,7 @@
 		188B0E081EB32B3F002691AC /* FMPageRouter */ = {
 			isa = PBXGroup;
 			children = (
+				186C961C1EB8827700FE0B82 /* Classes */,
 				188B0E0C1EB32B3F002691AC /* AppDelegate.h */,
 				188B0E0D1EB32B3F002691AC /* AppDelegate.m */,
 				188B0E0F1EB32B3F002691AC /* ViewController.h */,
@@ -465,9 +526,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				186C962C1EB8889600FE0B82 /* FMPageRouter.m in Sources */,
+				186C96281EB882EE00FE0B82 /* FMRouterURL.m in Sources */,
 				188B0E111EB32B3F002691AC /* ViewController.m in Sources */,
+				187B93CD1EBB162D007AA68B /* UIWebViewExtension.m in Sources */,
+				186C96361EB8958100FE0B82 /* NSNull+FMRouter.m in Sources */,
 				188B0E0E1EB32B3F002691AC /* AppDelegate.m in Sources */,
+				186C96331EB8951D00FE0B82 /* NSArray+FMRouter.m in Sources */,
 				188B0E0B1EB32B3F002691AC /* main.m in Sources */,
+				186C96301EB88BA300FE0B82 /* NSString+FMRouter.m in Sources */,
+				186C96251EB882C100FE0B82 /* UIViewController+FMRouter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
