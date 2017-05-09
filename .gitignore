@@ -2,3 +2,4 @@ Pods/
 DerivedData/
 build/
 *.vpp.bak*
+*.xcuserstate
