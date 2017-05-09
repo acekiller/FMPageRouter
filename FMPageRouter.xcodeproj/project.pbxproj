@@ -8,12 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		1276D39E7066FCA1CB7A9566 /* libPods-FMPageRouterTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AF65A7F58CAF37750217F8C0 /* libPods-FMPageRouterTests.a */; };
+		186499F81EC0151E0091398C /* FMRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 186499F71EC0151E0091398C /* FMRouter.m */; };
+		186499FB1EC017370091398C /* FMRouterSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 186499FA1EC017370091398C /* FMRouterSet.m */; };
+		186499FE1EC018E00091398C /* FMRouterNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 186499FD1EC018E00091398C /* FMRouterNode.m */; };
+		18649A201EC07C5F0091398C /* FMRouterNodeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18649A1F1EC07C5F0091398C /* FMRouterNodeTests.m */; };
+		18649A211EC07C700091398C /* FMRouterNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 186499FD1EC018E00091398C /* FMRouterNode.m */; };
 		186C96251EB882C100FE0B82 /* UIViewController+FMRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 186C96241EB882C100FE0B82 /* UIViewController+FMRouter.m */; };
-		186C96281EB882EE00FE0B82 /* FMRouterURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 186C96271EB882EE00FE0B82 /* FMRouterURL.m */; };
 		186C962C1EB8889600FE0B82 /* FMPageRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 186C962B1EB8889600FE0B82 /* FMPageRouter.m */; };
 		186C96301EB88BA300FE0B82 /* NSString+FMRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 186C962F1EB88BA300FE0B82 /* NSString+FMRouter.m */; };
 		186C96331EB8951D00FE0B82 /* NSArray+FMRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 186C96321EB8951D00FE0B82 /* NSArray+FMRouter.m */; };
 		186C96361EB8958100FE0B82 /* NSNull+FMRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 186C96351EB8958100FE0B82 /* NSNull+FMRouter.m */; };
+		186FB1411EC15B8A00A72C32 /* FMRouterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 186FB1401EC15B8A00A72C32 /* FMRouterTests.m */; };
+		186FB1421EC15B8F00A72C32 /* FMRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 186499F71EC0151E0091398C /* FMRouter.m */; };
+		186FB14A1EC1B3DB00A72C32 /* FMRouterSetTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 186FB1491EC1B3DB00A72C32 /* FMRouterSetTests.m */; };
+		186FB14B1EC1B3E100A72C32 /* FMRouterSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 186499FA1EC017370091398C /* FMRouterSet.m */; };
+		186FB14E1EC1B5EB00A72C32 /* FMRouterURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 186FB14D1EC1B5EB00A72C32 /* FMRouterURL.m */; };
+		186FB14F1EC1B5EB00A72C32 /* FMRouterURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 186FB14D1EC1B5EB00A72C32 /* FMRouterURL.m */; };
+		186FB1511EC1B82C00A72C32 /* FMRouterURLTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 186FB1501EC1B82C00A72C32 /* FMRouterURLTests.m */; };
+		186FB1521EC1BE0400A72C32 /* FMPageRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 186C962B1EB8889600FE0B82 /* FMPageRouter.m */; };
 		187B93CD1EBB162D007AA68B /* UIWebViewExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 187B93CC1EBB162D007AA68B /* UIWebViewExtension.m */; };
 		188B0E0B1EB32B3F002691AC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 188B0E0A1EB32B3F002691AC /* main.m */; };
 		188B0E0E1EB32B3F002691AC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 188B0E0D1EB32B3F002691AC /* AppDelegate.m */; };
@@ -45,10 +57,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		186499F61EC0151E0091398C /* FMRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMRouter.h; sourceTree = "<group>"; };
+		186499F71EC0151E0091398C /* FMRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMRouter.m; sourceTree = "<group>"; };
+		186499F91EC017370091398C /* FMRouterSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMRouterSet.h; sourceTree = "<group>"; };
+		186499FA1EC017370091398C /* FMRouterSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMRouterSet.m; sourceTree = "<group>"; };
+		186499FC1EC018E00091398C /* FMRouterNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMRouterNode.h; sourceTree = "<group>"; };
+		186499FD1EC018E00091398C /* FMRouterNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMRouterNode.m; sourceTree = "<group>"; };
+		18649A1F1EC07C5F0091398C /* FMRouterNodeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMRouterNodeTests.m; sourceTree = "<group>"; };
 		186C96231EB882C100FE0B82 /* UIViewController+FMRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+FMRouter.h"; sourceTree = "<group>"; };
 		186C96241EB882C100FE0B82 /* UIViewController+FMRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+FMRouter.m"; sourceTree = "<group>"; };
-		186C96261EB882EE00FE0B82 /* FMRouterURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMRouterURL.h; sourceTree = "<group>"; };
-		186C96271EB882EE00FE0B82 /* FMRouterURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMRouterURL.m; sourceTree = "<group>"; };
 		186C962A1EB8889600FE0B82 /* FMPageRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMPageRouter.h; sourceTree = "<group>"; };
 		186C962B1EB8889600FE0B82 /* FMPageRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMPageRouter.m; sourceTree = "<group>"; };
 		186C962E1EB88BA300FE0B82 /* NSString+FMRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FMRouter.h"; sourceTree = "<group>"; };
@@ -58,6 +75,11 @@
 		186C96341EB8958100FE0B82 /* NSNull+FMRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNull+FMRouter.h"; sourceTree = "<group>"; };
 		186C96351EB8958100FE0B82 /* NSNull+FMRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNull+FMRouter.m"; sourceTree = "<group>"; };
 		186C96371EB8960F00FE0B82 /* FMRouterExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMRouterExtensions.h; sourceTree = "<group>"; };
+		186FB1401EC15B8A00A72C32 /* FMRouterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMRouterTests.m; sourceTree = "<group>"; };
+		186FB1491EC1B3DB00A72C32 /* FMRouterSetTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMRouterSetTests.m; sourceTree = "<group>"; };
+		186FB14C1EC1B5EB00A72C32 /* FMRouterURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMRouterURL.h; sourceTree = "<group>"; };
+		186FB14D1EC1B5EB00A72C32 /* FMRouterURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMRouterURL.m; sourceTree = "<group>"; };
+		186FB1501EC1B82C00A72C32 /* FMRouterURLTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMRouterURLTests.m; sourceTree = "<group>"; };
 		187B93CB1EBB162D007AA68B /* UIWebViewExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIWebViewExtension.h; sourceTree = "<group>"; };
 		187B93CC1EBB162D007AA68B /* UIWebViewExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIWebViewExtension.m; sourceTree = "<group>"; };
 		188B0E061EB32B3F002691AC /* FMPageRouter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FMPageRouter.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,22 +143,20 @@
 			isa = PBXGroup;
 			children = (
 				186C962D1EB88B8E00FE0B82 /* Extensions */,
-				186C96291EB8861100FE0B82 /* ObjectMapping */,
-				186C96231EB882C100FE0B82 /* UIViewController+FMRouter.h */,
-				186C96241EB882C100FE0B82 /* UIViewController+FMRouter.m */,
-				186C96261EB882EE00FE0B82 /* FMRouterURL.h */,
-				186C96271EB882EE00FE0B82 /* FMRouterURL.m */,
 				186C962A1EB8889600FE0B82 /* FMPageRouter.h */,
 				186C962B1EB8889600FE0B82 /* FMPageRouter.m */,
+				186499F61EC0151E0091398C /* FMRouter.h */,
+				186499F71EC0151E0091398C /* FMRouter.m */,
+				186499FC1EC018E00091398C /* FMRouterNode.h */,
+				186499FD1EC018E00091398C /* FMRouterNode.m */,
+				186499F91EC017370091398C /* FMRouterSet.h */,
+				186499FA1EC017370091398C /* FMRouterSet.m */,
+				186FB14C1EC1B5EB00A72C32 /* FMRouterURL.h */,
+				186FB14D1EC1B5EB00A72C32 /* FMRouterURL.m */,
+				186C96231EB882C100FE0B82 /* UIViewController+FMRouter.h */,
+				186C96241EB882C100FE0B82 /* UIViewController+FMRouter.m */,
 			);
 			path = Classes;
-			sourceTree = "<group>";
-		};
-		186C96291EB8861100FE0B82 /* ObjectMapping */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ObjectMapping;
 			sourceTree = "<group>";
 		};
 		186C962D1EB88B8E00FE0B82 /* Extensions */ = {
@@ -207,8 +227,12 @@
 		188B0E221EB32B3F002691AC /* FMPageRouterTests */ = {
 			isa = PBXGroup;
 			children = (
-				188B0E231EB32B3F002691AC /* FMPageRouterTests.m */,
 				188B0E251EB32B3F002691AC /* Info.plist */,
+				188B0E231EB32B3F002691AC /* FMPageRouterTests.m */,
+				18649A1F1EC07C5F0091398C /* FMRouterNodeTests.m */,
+				186FB1401EC15B8A00A72C32 /* FMRouterTests.m */,
+				186FB1491EC1B3DB00A72C32 /* FMRouterSetTests.m */,
+				186FB1501EC1B82C00A72C32 /* FMRouterURLTests.m */,
 			);
 			path = FMPageRouterTests;
 			sourceTree = "<group>";
@@ -527,14 +551,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				186C962C1EB8889600FE0B82 /* FMPageRouter.m in Sources */,
-				186C96281EB882EE00FE0B82 /* FMRouterURL.m in Sources */,
+				186499FE1EC018E00091398C /* FMRouterNode.m in Sources */,
 				188B0E111EB32B3F002691AC /* ViewController.m in Sources */,
 				187B93CD1EBB162D007AA68B /* UIWebViewExtension.m in Sources */,
+				186499FB1EC017370091398C /* FMRouterSet.m in Sources */,
 				186C96361EB8958100FE0B82 /* NSNull+FMRouter.m in Sources */,
 				188B0E0E1EB32B3F002691AC /* AppDelegate.m in Sources */,
 				186C96331EB8951D00FE0B82 /* NSArray+FMRouter.m in Sources */,
 				188B0E0B1EB32B3F002691AC /* main.m in Sources */,
+				186FB14E1EC1B5EB00A72C32 /* FMRouterURL.m in Sources */,
 				186C96301EB88BA300FE0B82 /* NSString+FMRouter.m in Sources */,
+				186499F81EC0151E0091398C /* FMRouter.m in Sources */,
 				186C96251EB882C100FE0B82 /* UIViewController+FMRouter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -543,7 +570,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				186FB1421EC15B8F00A72C32 /* FMRouter.m in Sources */,
 				188B0E241EB32B3F002691AC /* FMPageRouterTests.m in Sources */,
+				186FB1521EC1BE0400A72C32 /* FMPageRouter.m in Sources */,
+				186FB14A1EC1B3DB00A72C32 /* FMRouterSetTests.m in Sources */,
+				186FB1411EC15B8A00A72C32 /* FMRouterTests.m in Sources */,
+				186FB1511EC1B82C00A72C32 /* FMRouterURLTests.m in Sources */,
+				18649A211EC07C700091398C /* FMRouterNode.m in Sources */,
+				186FB14B1EC1B3E100A72C32 /* FMRouterSet.m in Sources */,
+				18649A201EC07C5F0091398C /* FMRouterNodeTests.m in Sources */,
+				186FB14F1EC1B5EB00A72C32 /* FMRouterURL.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -631,7 +667,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -673,7 +709,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -685,13 +721,15 @@
 			baseConfigurationReference = 1D10F2B2D568A2A1E21BBE96 /* Pods-FMPageRouter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = S7VSUA36LS;
 				INFOPLIST_FILE = FMPageRouter/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fantasy.FMPageRouter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "c364e5e6-9d05-4fe8-8072-81f046711232";
-				PROVISIONING_PROFILE_SPECIFIER = demoDev;
+				PROVISIONING_PROFILE = "0ab69c81-ab9c-4e95-8603-67749ce8d351";
+				PROVISIONING_PROFILE_SPECIFIER = "smart control enterprise";
 			};
 			name = Debug;
 		};
@@ -700,13 +738,15 @@
 			baseConfigurationReference = 933DB1B7EEE84587573E09BF /* Pods-FMPageRouter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = S7VSUA36LS;
 				INFOPLIST_FILE = FMPageRouter/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fantasy.FMPageRouter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "c364e5e6-9d05-4fe8-8072-81f046711232";
-				PROVISIONING_PROFILE_SPECIFIER = demoDev;
+				PROVISIONING_PROFILE = "0ab69c81-ab9c-4e95-8603-67749ce8d351";
+				PROVISIONING_PROFILE_SPECIFIER = "smart control enterprise";
 			};
 			name = Release;
 		};

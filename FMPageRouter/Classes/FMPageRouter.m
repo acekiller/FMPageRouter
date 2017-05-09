@@ -7,11 +7,33 @@
 //
 
 #import "FMPageRouter.h"
+#import "FMRouterSet.h"
 
 @implementation FMPageRouter
 
-+ (instancetype) shareInstance
-{
++ (void) addSupportRouterDomain:(NSString *)domain forScheme:(NSString *)scheme {
+//    TODO
+}
+
++ (BOOL) isSupportRouterWithUrlString:(NSString *)urlString {
+//    TODO
+    return YES;
+}
+
++ (BOOL) isSupportRouterWithUrl:(NSURL *)url {
+//    TODO
+    return YES;
+}
+
++ (void) addDynamicNodePattern:(NSString *)pattern {
+    [FMRouterNode addDynamicNodePattern:pattern];
+}
+
++ (NSArray *)dynamicNodePatterns {
+    return [FMRouterNode dynamicNodePatterns];
+}
+
++ (instancetype) shareInstance {
     static id obj;
     static dispatch_once_t once;
     dispatch_once(&once, ^{
@@ -21,22 +43,27 @@
 }
 
 + (void) registerPageControllerClass:(Class)controllerClass
-                   forRouterPagePath:(NSString *)path
-{
+                   forRouterPagePath:(NSString *)path {
     [[self shareInstance] registerPageControllerClass:controllerClass
                                     forRouterPagePath:path];
 }
 
 - (void) registerPageControllerClass:(Class)controllerClass
-                   forRouterPagePath:(NSString *)path
-{
-    
+                   forRouterPagePath:(NSString *)path {
+//    TODO
+}
+
++ (Class) getRequestClassWithURL:(NSString *)routerURL
+                       extParams:(NSDictionary *)extParams
+                          failed:(void(^)(NSError *))failed {
+//    TODO
+    return nil;
 }
 
 + (UIViewController *) requestPageWithURL:(NSString *)routerURL
                                 extParams:(NSDictionary *)extParams //用于扩展routerURL的数据
-                                   failed:(void(^)(NSError *))failed
-{
+                                   failed:(void(^)(NSError *))failed {
+//    TODO :
     return nil;
 }
 
@@ -44,8 +71,7 @@
 + (UIViewController *)routerPageWithURL:(NSString *)routerURL
                               extParams:(NSDictionary *)extParams
                                  target:(UIViewController *)target
-                                 failed:(void(^)(NSError *))failed
-{
+                                 failed:(void(^)(NSError *))failed {
     return [self routerPageWithURL:routerURL
                          extParams:extParams
                         target:target
@@ -59,8 +85,8 @@
                                  target:(UIViewController *)target
                              transition:(id)transition
                                  isPush:(BOOL)isPush
-                                 failed:(void (^)(NSError *))failed
-{
+                                 failed:(void (^)(NSError *))failed {
+//    XXX :
     UIViewController *controller = [self requestPageWithURL:routerURL
                                                   extParams:extParams
                                                      failed:^(NSError *error) {

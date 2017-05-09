@@ -11,26 +11,26 @@
 
 @implementation UIViewController (FMRouter)
 
-+ (void)load {
-    NSLog(@"%@:%s",self,__PRETTY_FUNCTION__);
-    [self loadRouters];
-}
-
-+ (void) loadRouters {
-    NSMutableArray *routerPaths = [NSMutableArray new];
-    NSString *sigPath = [self routerPath];
-    NSArray *multiPaths = [self routerPaths];
-    if (sigPath.isEmpty) {
-        if (multiPaths.isEmpty) {
-            return;
-        }
-        [routerPaths addObjectsFromArray:multiPaths];
-    } else {
-        [routerPaths addObject:sigPath];
-    }
-    
-    [self registerRouterForPaths:routerPaths];
-}
+//+ (void)load {
+//    NSLog(@"%@:%s",self,__PRETTY_FUNCTION__);
+//    [self loadRouters];
+//}
+//
+//+ (void) loadRouters {
+//    NSMutableArray *routerPaths = [NSMutableArray new];
+//    NSString *sigPath = [self routerPath];
+//    NSArray *multiPaths = [self routerPaths];
+//    if (sigPath.isEmpty) {
+//        if (multiPaths.isEmpty) {
+//            return;
+//        }
+//        [routerPaths addObjectsFromArray:multiPaths];
+//    } else {
+//        [routerPaths addObject:sigPath];
+//    }
+//    
+//    [self registerRouterForPaths:routerPaths];
+//}
 
 + (NSString *) routerPath {
     return nil;
@@ -46,7 +46,8 @@
         return;
     }
     for (NSString *path in paths) {
-        [FMPageRouter registerPageControllerClass:self forRouterPagePath:path];
+        [FMPageRouter registerPageControllerClass:self
+                                forRouterPagePath:path];
     }
 }
 
