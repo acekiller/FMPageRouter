@@ -29,9 +29,9 @@
 
 - (void) _initParamsFormatter {
     if (self.url.query.length <= 0) {
-        self.path = [self.url path];
+        self.relativePath = [self.url path];
     } else {
-        self.path = [[[self.url path] stringByAppendingString:@"?"] stringByAppendingString:self.url.query];
+        self.relativePath = [[[self.url path] stringByAppendingString:@"?"] stringByAppendingString:self.url.query];
     }
 }
 

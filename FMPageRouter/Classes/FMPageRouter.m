@@ -7,7 +7,22 @@
 //
 
 #import "FMPageRouter.h"
+
+#import <objc/runtime.h>
+
+#import "NSDictionary+FMRouter.h"
+
 #import "FMRouterSet.h"
+#import "FMRouterURL.h"
+
+const NSString *routerDynamicNodeParamsKey;
+const NSString *routerQueryParamsKey;
+const NSString *routerAllParamsKey;
+const NSString *routerExtParamsKey;
+
+@interface FMPageRouter ()
+@property (nonatomic, strong) FMRouterSet *routerSet;
+@end
 
 @implementation FMPageRouter
 
@@ -42,29 +57,68 @@
     return obj;
 }
 
+- (instancetype) init {
+    self = [super init];
+    if (self) {
+        self.routerSet = [FMRouterSet routerSet];
+    }
+    return self;
+}
+
 + (void) registerPageControllerClass:(Class)controllerClass
-                   forRouterPagePath:(NSString *)path {
+                   forRouterPagePath:(NSString *)relativePath {
     [[self shareInstance] registerPageControllerClass:controllerClass
-                                    forRouterPagePath:path];
+                                    forRouterPagePath:relativePath];
 }
 
 - (void) registerPageControllerClass:(Class)controllerClass
                    forRouterPagePath:(NSString *)path {
-//    TODO
+    if (![controllerClass isSubclassOfClass:UIViewController.class]) {
+        return;
+    }
+    [self.routerSet addRouterForPath:path page:controllerClass];
 }
 
 + (Class) getRequestClassWithURL:(NSString *)routerURL
                        extParams:(NSDictionary *)extParams
                           failed:(void(^)(NSError *))failed {
-//    TODO
-    return nil;
+    FMRouterURL *url = [[FMRouterURL alloc] initWithUrlString:routerURL];
+    FMRouter *router = [[FMPageRouter shareInstance].routerSet routerForPath:url.relativePath];
+    return router.pageCls;
 }
 
 + (UIViewController *) requestPageWithURL:(NSString *)routerURL
                                 extParams:(NSDictionary *)extParams //用于扩展routerURL的数据
                                    failed:(void(^)(NSError *))failed {
-//    TODO :
-    return nil;
+    FMRouterURL *url = [[FMRouterURL alloc] initWithUrlString:routerURL];
+    FMRouter *router = [[FMPageRouter shareInstance].routerSet routerForPath:url.relativePath];
+    
+    UIViewController *controller = [[router.pageCls alloc] init];
+    [self bindDynamicNode:[router dynamicNodeForPath:url.relativePath]
+                   querys:[router allQueryForPath:url.relativePath]
+                      ext:extParams
+             toController:controller];
+    return controller;
+}
+
++ (void) bindDynamicNode:(NSDictionary *)dynamicNode querys:(NSDictionary *)querys ext:(NSDictionary *)ext toController:(UIViewController *)controller {
+    objc_setAssociatedObject(controller, &routerDynamicNodeParamsKey, dynamicNode, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(controller, &routerQueryParamsKey, querys, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(controller, &routerExtParamsKey, ext, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    NSMutableDictionary *allParams = [NSMutableDictionary new];
+    if (![dynamicNode isEmpty]) {
+        [allParams addEntriesFromDictionary:dynamicNode];
+    }
+    
+    if (![querys isEmpty]) {
+        [allParams addEntriesFromDictionary:querys];
+    }
+    
+    if (![ext isEmpty]) {
+        [allParams addEntriesFromDictionary:ext];
+    }
+    
+    objc_setAssociatedObject(controller, &routerAllParamsKey, allParams.isEmpty ? nil : allParams, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 /*此方法采用默认push动画方案*/
@@ -109,6 +163,22 @@
     }
     
     return controller;
+}
+
+- (NSDictionary *)routerDynamicNodeParamsForController:(UIViewController *)controller {
+    return objc_getAssociatedObject(controller, &routerDynamicNodeParamsKey);
+}
+
+- (NSDictionary *)routerQueryParamsForController:(UIViewController *)controller {
+    return objc_getAssociatedObject(controller, &routerDynamicNodeParamsKey);
+}
+
+- (NSDictionary *)routerExtParamsForController:(UIViewController *)controller {
+    return objc_getAssociatedObject(controller, &routerDynamicNodeParamsKey);
+}
+
+- (NSDictionary *)routerAllParamsForController:(UIViewController *)controller {
+    return objc_getAssociatedObject(controller, &routerDynamicNodeParamsKey);
 }
 
 @end

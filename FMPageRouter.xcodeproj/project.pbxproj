@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1276D39E7066FCA1CB7A9566 /* libPods-FMPageRouterTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AF65A7F58CAF37750217F8C0 /* libPods-FMPageRouterTests.a */; };
+		186249351EC2E7A600489083 /* NSDictionary+FMRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 186249341EC2E7A600489083 /* NSDictionary+FMRouter.m */; };
 		186499F81EC0151E0091398C /* FMRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 186499F71EC0151E0091398C /* FMRouter.m */; };
 		186499FB1EC017370091398C /* FMRouterSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 186499FA1EC017370091398C /* FMRouterSet.m */; };
 		186499FE1EC018E00091398C /* FMRouterNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 186499FD1EC018E00091398C /* FMRouterNode.m */; };
@@ -57,6 +58,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		186249331EC2E7A600489083 /* NSDictionary+FMRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+FMRouter.h"; sourceTree = "<group>"; };
+		186249341EC2E7A600489083 /* NSDictionary+FMRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+FMRouter.m"; sourceTree = "<group>"; };
 		186499F61EC0151E0091398C /* FMRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMRouter.h; sourceTree = "<group>"; };
 		186499F71EC0151E0091398C /* FMRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMRouter.m; sourceTree = "<group>"; };
 		186499F91EC017370091398C /* FMRouterSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMRouterSet.h; sourceTree = "<group>"; };
@@ -171,6 +174,8 @@
 				186C96371EB8960F00FE0B82 /* FMRouterExtensions.h */,
 				187B93CB1EBB162D007AA68B /* UIWebViewExtension.h */,
 				187B93CC1EBB162D007AA68B /* UIWebViewExtension.m */,
+				186249331EC2E7A600489083 /* NSDictionary+FMRouter.h */,
+				186249341EC2E7A600489083 /* NSDictionary+FMRouter.m */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -554,6 +559,7 @@
 				186499FE1EC018E00091398C /* FMRouterNode.m in Sources */,
 				188B0E111EB32B3F002691AC /* ViewController.m in Sources */,
 				187B93CD1EBB162D007AA68B /* UIWebViewExtension.m in Sources */,
+				186249351EC2E7A600489083 /* NSDictionary+FMRouter.m in Sources */,
 				186499FB1EC017370091398C /* FMRouterSet.m in Sources */,
 				186C96361EB8958100FE0B82 /* NSNull+FMRouter.m in Sources */,
 				188B0E0E1EB32B3F002691AC /* AppDelegate.m in Sources */,

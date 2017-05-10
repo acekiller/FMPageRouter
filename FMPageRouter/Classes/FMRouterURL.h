@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface FMRouterURL : NSObject
-@property (nonatomic, strong) NSString *path;
+@property (nonatomic, strong) NSString *relativePath;
 
 - (instancetype) init NS_UNAVAILABLE;
 

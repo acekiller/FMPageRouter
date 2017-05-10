@@ -37,6 +37,8 @@
  */
 - (BOOL) isConflictRouter:(FMRouter *)router;
 
+- (NSDictionary *)allQueryForPath:(NSString *)relativePath;
+
 - (NSDictionary *)dynamicNodeForPath:(NSString *)path;
 
 - (NSDictionary *)dynamicNodeForPath:(NSString *)path

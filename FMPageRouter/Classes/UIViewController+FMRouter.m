@@ -32,12 +32,12 @@
 //    [self registerRouterForPaths:routerPaths];
 //}
 
-+ (NSString *) routerPath {
++ (NSString *) routerPathPattern {
     return nil;
 }
 
 //包含多路由匹配支持
-+ (NSArray *) routerPaths {
++ (NSArray *) routerPathPatterns {
     return nil;
 }
 
@@ -49,6 +49,22 @@
         [FMPageRouter registerPageControllerClass:self
                                 forRouterPagePath:path];
     }
+}
+
+- (NSDictionary *)routerQuery {
+    return [[FMPageRouter shareInstance] routerQueryParamsForController:self];
+}
+
+- (NSDictionary *)routerDynamicNodes {
+    return [[FMPageRouter shareInstance] routerDynamicNodeParamsForController:self];
+}
+
+- (NSDictionary *)routerExtParams {
+    return [[FMPageRouter shareInstance] routerExtParamsForController:self];
+}
+
+- (NSDictionary *)allRouterParams {
+    return [[FMPageRouter shareInstance] routerAllParamsForController:self];
 }
 
 @end

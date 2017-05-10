@@ -21,8 +21,13 @@
 
 + (NSArray *) dynamicNodePatterns;
 
++ (instancetype) shareInstance;
+
+/*
+ *  path为
+ */
 + (void) registerPageControllerClass:(Class)controllerClass
-                   forRouterPagePath:(NSString *)path;
+                   forRouterPagePath:(NSString *)relativePath;
 
 + (Class) getRequestClassWithURL:(NSString *)routerURL
                        extParams:(NSDictionary *)extParams
@@ -46,5 +51,12 @@
                                  isPush:(BOOL)isPush
                                  failed:(void(^)(NSError *))failed;
 
+- (NSDictionary *)routerDynamicNodeParamsForController:(UIViewController *)controller;
+
+- (NSDictionary *)routerQueryParamsForController:(UIViewController *)controller;
+
+- (NSDictionary *)routerExtParamsForController:(UIViewController *)controller;
+
+- (NSDictionary *)routerAllParamsForController:(UIViewController *)controller;
 
 @end

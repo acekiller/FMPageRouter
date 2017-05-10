@@ -8,6 +8,9 @@
 
 #import "FMRouter.h"
 #import "FMRouterNode.h"
+#import "NSString+FMRouter.h"
+#import "NSArray+FMRouter.h"
+#import "NSDictionary+FMRouter.h"
 
 @interface FMRouter ()
 
@@ -86,6 +89,31 @@
 - (BOOL) matchedForPath:(NSString *)path {
     FMRouter *router = [[[self class] alloc] initWithPath:path];
     return [self matchedForRouter:router];
+}
+
+- (NSDictionary *)allQueryForPath:(NSString *)relativePath {
+    if (relativePath.isEmpty) {
+        return nil;
+    }
+    NSString *queryString = [[self.path componentsSeparatedByString:@"?"] lastObject];
+    if (queryString.isEmpty) {
+        return nil;
+    }
+    NSArray *queryItems = [queryString componentsSeparatedByString:@"&"];
+    if (queryItems.isEmpty) {
+        return nil;
+    }
+    NSMutableDictionary *querys = [NSMutableDictionary new];
+    for (NSString *queryItem in queryItems) {
+        NSArray *item = [queryItem componentsSeparatedByString:@"="];
+        if (item.count == 2) {
+            [querys setObject:item[1] forKey:item[0]];
+        }
+    }
+    if (querys.isEmpty) {
+        return nil;
+    }
+    return querys;
 }
 
 - (NSDictionary *)dynamicNodeForPath:(NSString *)path {

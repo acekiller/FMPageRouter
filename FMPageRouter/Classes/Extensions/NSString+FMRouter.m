@@ -14,7 +14,7 @@
     if (![self isKindOfClass:NSString.class]) {
         return YES;
     }
-    if ([(NSString *)self length] <= 0) {
+    if ([self length] <= 0) {
         return YES;
     }
     return NO;

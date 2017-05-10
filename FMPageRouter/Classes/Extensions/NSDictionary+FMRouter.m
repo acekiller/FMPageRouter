@@ -1,18 +1,17 @@
 //
-//  NSArray+FMRouter.m
+//  NSDictionary+FMRouter.m
 //  FMPageRouter
 //
-//  Created by Fantasy on 2017/5/2.
+//  Created by Fantasy on 2017/5/10.
 //  Copyright © 2017年 fantasy. All rights reserved.
 //
 
-#import "NSArray+FMRouter.h"
+#import "NSDictionary+FMRouter.h"
 
-@implementation NSArray (FMRouter)
-
+@implementation NSDictionary (FMRouter)
 - (BOOL) isEmpty
 {
-    if (![self isKindOfClass:NSArray.class]) {
+    if (![self isKindOfClass:NSDictionary.class]) {
         return YES;
     }
     if ([self count] <= 0) {
@@ -20,5 +19,4 @@
     }
     return NO;
 }
-
 @end
