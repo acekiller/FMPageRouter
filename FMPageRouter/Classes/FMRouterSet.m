@@ -36,11 +36,10 @@
 - (NSError *) addRouterForPath:(NSString *)path
                           page:(Class)pageCls {
     FMRouter *router = [[FMRouter alloc] initWithPath:path page:pageCls];
-    return [self addRouterForRouter:router page:pageCls];
+    return [self addRouterForRouter:router];
 }
 
-- (NSError *) addRouterForRouter:(FMRouter *)router
-                            page:(Class)pageCls {
+- (NSError *) addRouterForRouter:(FMRouter *)router {
     if (router == nil) {
         return [NSError errorWithDomain:@"com.fantasy.FMPageRouter"
                                    code:FMPageRouterNULLError
@@ -57,7 +56,11 @@
 }
 
 - (FMRouter *) routerForPath:(NSString *)path {
-//    TODO
+    for (FMRouter *router in routers) {
+        if ([router matchedForPath:path]) {
+            return router;
+        }
+    }
     return nil;
 }
 

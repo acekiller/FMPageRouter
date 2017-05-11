@@ -18,8 +18,7 @@
 - (NSError *) addRouterForPath:(NSString *)path
                           page:(Class)pageCls;
 
-- (NSError *) addRouterForRouter:(FMRouter *)router
-                            page:(Class)pageCls;
+- (NSError *) addRouterForRouter:(FMRouter *)router;
 
 - (FMRouter *) routerForPath:(NSString *)path;
 

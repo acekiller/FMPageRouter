@@ -11,6 +11,10 @@ static NSMutableSet *patterns;
 
 @implementation FMRouterNode
 
++ (void) load {
+    [self addDynamicNodePattern:@":[\%\\w]+"];
+}
+
 + (void) addDynamicNodePattern:(NSString *)pattern {
     if (patterns == nil) {
         patterns = [NSMutableSet new];

@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "FMRouterSet.h"
 
 @interface FMRouterSetTests : XCTestCase
 
@@ -27,6 +28,20 @@
 - (void)testExample {
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
+}
+
+- (void) testRouterSet {
+    [[FMRouterSet routerSet] addRouterForPath:@"api/string/:name" page:NSString.class];
+    FMRouter *router = [[FMRouter alloc] initWithPath:@"api/object/:id" page:NSObject.class];
+    [[FMRouterSet routerSet] addRouterForRouter:router];
+    
+    if ([[FMRouterSet routerSet] routerForPath:@"api/string/hello"].pageCls != NSString.class) {
+        XCTFail(@"addRouterForPath test failed");
+    }
+    
+    if ([[FMRouterSet routerSet] routerForPath:@"api/object/3e4f78aaceb"].pageCls != NSObject.class) {
+        XCTFail(@"addRouterForRouter test failed");
+    }
 }
 
 - (void)testPerformanceExample {
