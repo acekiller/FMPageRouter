@@ -32,18 +32,18 @@
 
 - (void) testUrlPathCheck {
     FMRouterURL *urlParams = [[FMRouterURL alloc] initWithUrlString:@"https://gotoappbox.com/api/v2/:deviceid?id=welcome&name=names"];
-    NSLog(@"urlParams : %@",urlParams.path);
+    NSLog(@"urlParams : %@",urlParams.relativePath);
     
     FMRouterURL *urlParams1 = [[FMRouterURL alloc] initWithUrlString:@"https://gotoappbox.com/api/v2/dddd?id=welcome&name=names"];
-    NSLog(@"urlParams : %@",urlParams1.path);
+    NSLog(@"urlParams : %@",urlParams1.relativePath);
     
     FMRouterURL *url = [[FMRouterURL alloc] initWithUrlString:@"https://gotoappbox.com/api/v2/:deviceid"];
-    NSLog(@"url : %@",url.path);
+    NSLog(@"url : %@",url.relativePath);
     
     FMRouterURL *customerUrl = [[FMRouterURL alloc] initWithUrlString:@"FMPageRouter://test/api/v/de"];
-    NSLog(@"customerUrl : %@",customerUrl.path);
+    NSLog(@"customerUrl : %@",customerUrl.relativePath);
     
-    FMRouterURL *
+//    FMRouterURL *
     
 }
 

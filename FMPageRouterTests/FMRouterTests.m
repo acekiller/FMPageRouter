@@ -38,7 +38,13 @@
     
     NSLog(@"router1 dyn : %@", [router1 dynamicNodeForPath:@"api/hello"]);
     
-    NSLog(@"router2 dyn : %@", [router2 dynamicNodeForPath:@"api/achd/avi" removePrefix:@":"]);
+    if ([router2 dynamicNodeForPath:@"api/achd/avi" removePrefix:@":"].count != 1) {
+        XCTFail("dynamicNodeForPath test Failed");
+    }
+    
+    if ([router2 allQueryForPath:@"api/apst/avi?id=01935&name=feng&type=2"].count != 3) {
+        XCTFail("api/apst/avi?id=01935&name=feng&type=2 Querys Test Failed");
+    }
     
     if (![router1 matchedForPath:@"api/welcome"]) {
         XCTFail("api/welcome not matched");

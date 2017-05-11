@@ -95,7 +95,7 @@
     if (relativePath.isEmpty) {
         return nil;
     }
-    NSString *queryString = [[self.path componentsSeparatedByString:@"?"] lastObject];
+    NSString *queryString = [[relativePath componentsSeparatedByString:@"?"] lastObject];
     if (queryString.isEmpty) {
         return nil;
     }
