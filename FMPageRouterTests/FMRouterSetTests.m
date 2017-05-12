@@ -31,7 +31,7 @@
 }
 
 - (void) testRouterSet {
-    [[FMRouterSet routerSet] addRouterForPath:@"api/string/:name" page:NSString.class];
+    [[FMRouterSet routerSet] addRouterForPathPattern:@"api/string/:name" page:NSString.class];
     FMRouter *router = [[FMRouter alloc] initWithPath:@"api/object/:id" page:NSObject.class];
     [[FMRouterSet routerSet] addRouterForRouter:router];
     

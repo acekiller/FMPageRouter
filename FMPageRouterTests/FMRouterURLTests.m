@@ -32,18 +32,24 @@
 
 - (void) testUrlPathCheck {
     FMRouterURL *urlParams = [[FMRouterURL alloc] initWithUrlString:@"https://gotoappbox.com/api/v2/:deviceid?id=welcome&name=names"];
-    NSLog(@"urlParams : %@",urlParams.relativePath);
+    if (![[urlParams relativePath] isEqualToString:@"api/v2/:deviceid?id=welcome&name=names"]) {
+        XCTFail("has params dynamic path check failed");
+    }
     
     FMRouterURL *urlParams1 = [[FMRouterURL alloc] initWithUrlString:@"https://gotoappbox.com/api/v2/dddd?id=welcome&name=names"];
-    NSLog(@"urlParams : %@",urlParams1.relativePath);
+    if (![[urlParams1 relativePath] isEqualToString:@"api/v2/dddd?id=welcome&name=names"]) {
+        XCTFail("has params static path check failed");
+    }
     
     FMRouterURL *url = [[FMRouterURL alloc] initWithUrlString:@"https://gotoappbox.com/api/v2/:deviceid"];
-    NSLog(@"url : %@",url.relativePath);
+    if (![[url relativePath] isEqualToString:@"api/v2/:deviceid"]) {
+        XCTFail("no query relativePath check failed");
+    }
     
     FMRouterURL *customerUrl = [[FMRouterURL alloc] initWithUrlString:@"FMPageRouter://test/api/v/de"];
-    NSLog(@"customerUrl : %@",customerUrl.relativePath);
-    
-//    FMRouterURL *
+    if (![[customerUrl relativePath] isEqualToString:@"api/v/de"]) {
+        XCTFail("relativePath check failed");
+    }
     
 }
 

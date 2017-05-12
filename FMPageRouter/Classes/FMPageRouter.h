@@ -11,11 +11,8 @@
 
 @interface FMPageRouter : NSObject
 
-+ (void) addSupportRouterDomain:(NSString *)domain forScheme:(NSString *)scheme;
-
-+ (BOOL) isSupportRouterWithUrlString:(NSString *)urlString;
-
-+ (BOOL) isSupportRouterWithUrl:(NSURL *)url;
++ (void) addSupportRouterDomain:(NSString *)domain
+                      forScheme:(NSString *)scheme;
 
 + (void) addDynamicNodePattern:(NSString *)pattern;
 
@@ -27,7 +24,7 @@
  *  path为
  */
 + (void) registerPageControllerClass:(Class)controllerClass
-                   forRouterPagePath:(NSString *)relativePath;
+                forRouterPathPattern:(NSString *)pathPattern;
 
 + (Class) getRequestClassWithURL:(NSString *)routerURL
                        extParams:(NSDictionary *)extParams

@@ -12,6 +12,8 @@
 
 #import "NSDictionary+FMRouter.h"
 
+#import "FMRouterMacro.h"
+
 #import "FMRouterSet.h"
 #import "FMRouterURL.h"
 
@@ -30,12 +32,12 @@ const NSString *routerExtParamsKey;
 //    TODO
 }
 
-+ (BOOL) isSupportRouterWithUrlString:(NSString *)urlString {
-//    TODO
-    return YES;
-}
+//+ (BOOL) isSupportRouterWithUrlString:(NSString *)urlString {
+////    TODO
+//    return YES;
+//}
 
-+ (BOOL) isSupportRouterWithUrl:(NSURL *)url {
++ (BOOL) isSupportRouterWithUrl:(FMRouterURL *)url {
 //    TODO
     return YES;
 }
@@ -66,23 +68,27 @@ const NSString *routerExtParamsKey;
 }
 
 + (void) registerPageControllerClass:(Class)controllerClass
-                   forRouterPagePath:(NSString *)relativePath {
+                forRouterPathPattern:(NSString *)pathPattern {
     [[self shareInstance] registerPageControllerClass:controllerClass
-                                    forRouterPagePath:relativePath];
+                                 forRouterPathPattern:pathPattern];
 }
 
 - (void) registerPageControllerClass:(Class)controllerClass
-                   forRouterPagePath:(NSString *)path {
+                forRouterPathPattern:(NSString *)pathPattern {
     if (![controllerClass isSubclassOfClass:UIViewController.class]) {
         return;
     }
-    [self.routerSet addRouterForPath:path page:controllerClass];
+    [self.routerSet addRouterForPathPattern:pathPattern
+                                       page:controllerClass];
 }
 
 + (Class) getRequestClassWithURL:(NSString *)routerURL
                        extParams:(NSDictionary *)extParams
                           failed:(void(^)(NSError *))failed {
     FMRouterURL *url = [[FMRouterURL alloc] initWithUrlString:routerURL];
+    if ([self isSupportRouterWithUrl:url]) {
+        return nil;
+    }
     FMRouter *router = [[FMPageRouter shareInstance].routerSet routerForPath:url.relativePath];
     return router.pageCls;
 }
@@ -91,8 +97,22 @@ const NSString *routerExtParamsKey;
                                 extParams:(NSDictionary *)extParams //用于扩展routerURL的数据
                                    failed:(void(^)(NSError *))failed {
     FMRouterURL *url = [[FMRouterURL alloc] initWithUrlString:routerURL];
+    if ([self isSupportRouterWithUrl:url]) {
+        failed([NSError errorWithDomain:@"com.fantasy.FMPageRouter"
+                                   code:FMPageRouterURLIllegal
+                               userInfo:@{
+                                          NSLocalizedDescriptionKey : @"非法的请求链接。",
+                                          @"url": routerURL
+                                          }]);
+        return nil;
+    }
     FMRouter *router = [[FMPageRouter shareInstance].routerSet routerForPath:url.relativePath];
-    
+    if (router == nil) {
+        failed([NSError errorWithDomain:@"com.fantasy.FMPageRouter"
+                                   code:FMPageRouterURLMatchPagFailed
+                               userInfo:@{NSLocalizedDescriptionKey:@"无匹配的页面", @"url": routerURL}]);
+        return nil;
+    }
     UIViewController *controller = [[router.pageCls alloc] init];
     [self bindDynamicNode:[router dynamicNodeForPath:url.relativePath]
                    querys:[router allQueryForPath:url.relativePath]

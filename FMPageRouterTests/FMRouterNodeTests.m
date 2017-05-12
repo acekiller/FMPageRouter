@@ -18,7 +18,6 @@
 - (void)setUp {
     [super setUp];
     NSLog(@"%s",__PRETTY_FUNCTION__);
-    [FMRouterNode addDynamicNodePattern:@":[\%\\w]+"];
     // Put setup code here. This method is called before the invocation of each test method in the class.
 }
 

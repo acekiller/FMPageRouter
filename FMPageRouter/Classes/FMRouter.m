@@ -26,7 +26,8 @@
 @implementation FMRouter
 
 - (instancetype) initWithPath:(NSString *)path {
-    return [self initWithPath:path page:nil];
+    return [self initWithPath:path
+                         page:nil];
 }
 
 - (instancetype) initWithPath:(NSString *)path
@@ -116,14 +117,14 @@
     return querys;
 }
 
-- (NSDictionary *)dynamicNodeForPath:(NSString *)path {
-    return [self dynamicNodeForPath:path
-                 removePrefix:nil];
+- (NSDictionary *)dynamicNodeForPath:(NSString *)relativePath {
+    return [self dynamicNodeForPath:relativePath
+                       removePrefix:nil];
 }
 
-- (NSDictionary *)dynamicNodeForPath:(NSString *)path
+- (NSDictionary *)dynamicNodeForPath:(NSString *)relativePath
                         removePrefix:(NSString *)prefix {
-    FMRouter *router = [[[self class] alloc] initWithPath:path];
+    FMRouter *router = [[[self class] alloc] initWithPath:relativePath];
     if (![self matchedForRouter:router]) {
         return nil;
     }

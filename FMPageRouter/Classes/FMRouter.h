@@ -39,9 +39,9 @@
 
 - (NSDictionary *)allQueryForPath:(NSString *)relativePath;
 
-- (NSDictionary *)dynamicNodeForPath:(NSString *)path;
+- (NSDictionary *)dynamicNodeForPath:(NSString *)relativePath;
 
-- (NSDictionary *)dynamicNodeForPath:(NSString *)path
+- (NSDictionary *)dynamicNodeForPath:(NSString *)relativePath
                         removePrefix:(NSString *)prefix;
 
 @end

@@ -15,8 +15,8 @@
 
 - (instancetype) init NS_UNAVAILABLE;
 
-- (NSError *) addRouterForPath:(NSString *)path
-                          page:(Class)pageCls;
+- (NSError *) addRouterForPathPattern:(NSString *)pathPattern
+                                 page:(Class)pageCls;
 
 - (NSError *) addRouterForRouter:(FMRouter *)router;
 

@@ -33,6 +33,9 @@
     } else {
         self.relativePath = [[[self.url path] stringByAppendingString:@"?"] stringByAppendingString:self.url.query];
     }
+    if ([self.relativePath hasPrefix:@"/"]) {
+        self.relativePath = [self.relativePath substringFromIndex:1];
+    }
 }
 
 - (NSURL *)urlWithUrlString:(NSString *)urlString {

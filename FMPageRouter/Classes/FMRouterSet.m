@@ -7,9 +7,7 @@
 //
 
 #import "FMRouterSet.h"
-
-#define FMPageRouterNULLError 10000
-#define FMPageRouterConflictError 10001
+#import "FMRouterMacro.h"
 
 @implementation FMRouterSet {
     NSMutableArray *routers;
@@ -33,23 +31,27 @@
     return self;
 }
 
-- (NSError *) addRouterForPath:(NSString *)path
-                          page:(Class)pageCls {
-    FMRouter *router = [[FMRouter alloc] initWithPath:path page:pageCls];
+- (NSError *) addRouterForPathPattern:(NSString *)pathPattern
+                                 page:(Class)pageCls {
+    FMRouter *router = [[FMRouter alloc] initWithPath:pathPattern
+                                                 page:pageCls];
     return [self addRouterForRouter:router];
 }
 
 - (NSError *) addRouterForRouter:(FMRouter *)router {
     if (router == nil) {
         return [NSError errorWithDomain:@"com.fantasy.FMPageRouter"
-                                   code:FMPageRouterNULLError
+                                   code:FMPageRouterURLNoStaticNode
                                userInfo:@{NSLocalizedDescriptionKey:@"非法的,页面匹配路径，请检查匹配路径是否正确。"}];
     }
     
     if ([self hasConflictRouters:router]) {
         return [NSError errorWithDomain:@"com.fantasy.FMPageRouter"
-                                   code:FMPageRouterConflictError
-                               userInfo:@{NSLocalizedDescriptionKey:@"已存在相同匹配规则的路径，请确保匹配路径的唯一性。"}];
+                                   code:FMPageRouterURLConflict
+                               userInfo:@{
+                                          NSLocalizedDescriptionKey:@"匹配模式路径冲突。",
+                                          @"pattern" : router.path
+                                          }];
     }
     [routers addObject:router];
     return nil;

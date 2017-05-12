@@ -58,6 +58,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		186135331EC5401D001D51F7 /* FMRouterMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMRouterMacro.h; sourceTree = "<group>"; };
 		186249331EC2E7A600489083 /* NSDictionary+FMRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+FMRouter.h"; sourceTree = "<group>"; };
 		186249341EC2E7A600489083 /* NSDictionary+FMRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+FMRouter.m"; sourceTree = "<group>"; };
 		186499F61EC0151E0091398C /* FMRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMRouter.h; sourceTree = "<group>"; };
@@ -158,6 +159,7 @@
 				186FB14D1EC1B5EB00A72C32 /* FMRouterURL.m */,
 				186C96231EB882C100FE0B82 /* UIViewController+FMRouter.h */,
 				186C96241EB882C100FE0B82 /* UIViewController+FMRouter.m */,
+				186135331EC5401D001D51F7 /* FMRouterMacro.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";

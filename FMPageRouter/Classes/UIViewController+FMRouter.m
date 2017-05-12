@@ -47,7 +47,7 @@
     }
     for (NSString *path in paths) {
         [FMPageRouter registerPageControllerClass:self
-                                forRouterPagePath:path];
+                                forRouterPathPattern:path];
     }
 }
 
