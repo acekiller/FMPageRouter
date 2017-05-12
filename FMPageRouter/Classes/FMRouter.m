@@ -19,8 +19,6 @@
 @property (nonatomic, strong) NSArray *nodes;
 @property (nonatomic, strong) Class pageCls;
 
-- (BOOL) matchedForRouter:(FMRouter *)router;
-
 @end
 
 @implementation FMRouter
@@ -70,28 +68,6 @@
     return [path componentsSeparatedByString:@"/"];
 }
 
-- (BOOL) matchedForRouter:(FMRouter *)router {
-    if (router == nil || self.nodeLength != router.nodeLength) {
-        return NO;
-    }
-    
-    for (NSInteger i = 0; i < self.nodes.count; i++) {
-        FMRouterNode *node = self.nodes[i];
-        if (node.isDynamicNode) {
-            continue;
-        }
-        if (![node.nodeName isEqual:[router.nodes[i] nodeName]]) {
-            return NO;
-        }
-    }
-    return YES;
-}
-
-- (BOOL) matchedForPath:(NSString *)path {
-    FMRouter *router = [[[self class] alloc] initWithPath:path];
-    return [self matchedForRouter:router];
-}
-
 - (NSDictionary *)allQueryForPath:(NSString *)relativePath {
     if (relativePath.isEmpty) {
         return nil;
@@ -125,7 +101,7 @@
 - (NSDictionary *)dynamicNodeForPath:(NSString *)relativePath
                         removePrefix:(NSString *)prefix {
     FMRouter *router = [[[self class] alloc] initWithPath:relativePath];
-    if (![self matchedForRouter:router]) {
+    if (![self matchForRouter:router]) {
         return nil;
     }
     
@@ -160,6 +136,51 @@
         }
     }
     return YES;
+}
+
+#pragma mark - the Methods that has hash Encode
+- (NSUInteger) hash {
+    if (self.nodes.count <= 0) {
+        return [super hash];
+    }
+    NSInteger hashValue = [self.nodes[0] hash];
+    for (NSInteger i = 1; i < [self.nodes count]; i++) {
+        hashValue ^= [self.nodes[i] hash];
+    }
+    return hashValue;
+}
+
+- (BOOL) isEqual:(id)object {
+    if (![object isKindOfClass:self.class]) {
+        return NO;
+    }
+    return self.hash == [object hash];
+}
+
+- (BOOL) matchForRouter:(FMRouter *)router {
+    if (router == nil || ![router isKindOfClass:self.class] || self.nodeLength != router.nodeLength) {
+        return NO;
+    }
+    
+    for (NSInteger i = 0; i < self.nodes.count; i++) {
+        FMRouterNode *node = self.nodes[i];
+        if (node.isDynamicNode) {
+            continue;
+        }
+        if (![node match:router.nodes[i]]) {
+            return NO;
+        }
+    }
+    return YES;
+}
+
+- (BOOL) matchForPath:(NSString *)path {
+    FMRouter *router = [[[self class] alloc] initWithPath:path];
+    return [self matchForRouter:router];
+}
+
+- (BOOL) match:(FMRouter *)object {
+    return [self matchForRouter:object];
 }
 
 @end

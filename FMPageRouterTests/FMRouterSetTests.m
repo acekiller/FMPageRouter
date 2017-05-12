@@ -31,9 +31,18 @@
 }
 
 - (void) testRouterSet {
-    [[FMRouterSet routerSet] addRouterForPathPattern:@"api/string/:name" page:NSString.class];
+    if ([[FMRouterSet routerSet] addRouterForPathPattern:@"api/string/:name" page:NSString.class] != nil) {
+        XCTFail("Add Router Failed 1");
+    }
+    
     FMRouter *router = [[FMRouter alloc] initWithPath:@"api/object/:id" page:NSObject.class];
-    [[FMRouterSet routerSet] addRouterForRouter:router];
+    if ([[FMRouterSet routerSet] addRouterForRouter:router] != nil) {
+        XCTFail("Add Router Failed 2");
+    }
+    
+    if ([[FMRouterSet routerSet] addRouterForPathPattern:@"api/:string/helo" page:NSString.class] == nil) {
+        XCTFail("Added Error Router");
+    }
     
     if ([[FMRouterSet routerSet] routerForPath:@"api/string/hello"].pageCls != NSString.class) {
         XCTFail(@"addRouterForPath test failed");

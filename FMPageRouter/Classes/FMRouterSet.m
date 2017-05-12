@@ -59,7 +59,7 @@
 
 - (FMRouter *) routerForPath:(NSString *)path {
     for (FMRouter *router in routers) {
-        if ([router matchedForPath:path]) {
+        if ([router matchForPath:path]) {
             return router;
         }
     }
@@ -76,7 +76,7 @@
 
 - (FMRouter *)searchRouterForPath:(NSString *)path {
     for (FMRouter *router in routers) {
-        if ([router matchedForPath:path]) {
+        if ([router matchForPath:path]) {
             return router;
         }
     }

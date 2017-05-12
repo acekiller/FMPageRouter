@@ -32,6 +32,22 @@
 }
 
 - (void) testPatternMatch {
+    
+    FMRouterNode *node1 = [FMRouterNode nodeWithName:@"products" nodeOffset:1];
+    FMRouterNode *node2 = [FMRouterNode nodeWithName:@"products" nodeOffset:1];
+    FMRouterNode *node3 = [FMRouterNode nodeWithName:@"products" nodeOffset:0];
+    if (![node1 isEqual:node2]) {
+        XCTFail("The true is node1 isEqual node2");
+    }
+    
+    if ([node1 isEqual:node3]) {
+        XCTFail("The true is node1 not Equal node3");
+    }
+    
+    if ([node2 isEqual:node3]) {
+        XCTFail("The true is node2 not Equal node3");
+    }
+    
     FMRouterNode *node = [FMRouterNode nodeWithName:@":acd01a_" nodeOffset:0];
     if (!node.isDynamicNode) {
         XCTFail("node Dynamic Test Failed");

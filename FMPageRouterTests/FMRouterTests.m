@@ -31,9 +31,12 @@
 }
 
 - (void) testRouter {
+    
     FMRouter *router1 = [[FMRouter alloc] initWithPath:@"api/:aps" page:FMRouter.class];
+    
     FMRouter *router2 = [[FMRouter alloc] initWithPath:@"api/:aps/avi" page:FMRouter.class];
     FMRouter *router3 = [[FMRouter alloc] initWithPath:@"api/:acc" page:FMRouter.class];
+    FMRouter *router4 = [[FMRouter alloc] initWithPath:@"api/aps/:avi" page:FMRouter.class];
     
     NSLog(@"router1 dyn : %@", [router1 dynamicNodeForPath:@"api/hello"]);
     
@@ -45,20 +48,24 @@
         XCTFail("api/apst/avi?id=01935&name=feng&type=2 Querys Test Failed");
     }
     
-    if (![router1 matchedForPath:@"api/welcome"]) {
+    if (![router1 matchForPath:@"api/welcome"]) {
         XCTFail("api/welcome not matched");
     }
     
-    if ([router1 matchedForPath:@"api/welcome/amc"]) {
+    if ([router1 matchForPath:@"api/welcome/amc"]) {
         XCTFail("api/welcome/amc error matched");
     }
     
-    if (![router2 matchedForPath:@"api/welcome/avi"]) {
+    if (![router2 matchForPath:@"api/welcome/avi"]) {
         XCTFail("api/welcome/amc not matched");
     }
     
-    if ([router2 matchedForPath:@"api/welcome"]) {
+    if ([router2 matchForPath:@"api/welcome"]) {
         XCTFail("api/welcome error matched");
+    }
+    
+    if (![router2 isConflictRouter:router4]) {
+        XCTFail("router2 should match to router4");
     }
     
     if ([router1 isConflictRouter:router2]) {
@@ -71,6 +78,19 @@
     
     if ([router2 isConflictRouter:router3]) {
         XCTFail("for router2 and router3 conflict check has bug");
+    }
+}
+
+- (void) testRouterEquals {
+    FMRouter *router1 = [[FMRouter alloc] initWithPath:@"api/:aps" page:FMRouter.class];
+    FMRouter *router2 = [[FMRouter alloc] initWithPath:@"api/:aps" page:FMRouter.class];
+    FMRouter *router3 = [[FMRouter alloc] initWithPath:@"api/:aaps/app" page:FMRouter.class];
+    if (![router1 isEqual:router2]) {
+        XCTFail("the true is router1 equal router2");
+    }
+    
+    if ([router1 isEqual:router3]) {
+        XCTFail("the true is router1 not equal router3");
     }
 }
 

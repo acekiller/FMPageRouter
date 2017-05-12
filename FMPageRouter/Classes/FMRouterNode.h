@@ -24,4 +24,6 @@
 
 - (BOOL) matchForNodeName:(NSString *)nodeName;
 
+- (BOOL) match:(FMRouterNode *)object;
+
 @end

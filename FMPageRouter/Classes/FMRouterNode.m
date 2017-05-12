@@ -57,16 +57,12 @@ static NSMutableSet *patterns;
     return NO;
 }
 
-- (NSUInteger) hash {
-    return [self.nodeName hash];
-}
-
-- (BOOL) isEqual:(id)object {
-    if ([object isKindOfClass:self.class]) {
-        return NO;
-    }
-    return [super isEqual:object];
-}
+//- (BOOL) isEqual:(id)object {
+//    if ([object isKindOfClass:self.class]) {
+//        return NO;
+//    }
+//    return [super isEqual:object];
+//}
 
 - (BOOL) dynamicNodeAdapterForNodeName:(NSString *)nodeName
                             inPatterns:(NSArray *)patterns {
@@ -86,6 +82,27 @@ static NSMutableSet *patterns;
         }
     }
     return NO;
+}
+
+- (BOOL) isEqual:(id)object {
+    if (![object isKindOfClass:self.class]) {
+        return NO;
+    }
+    return [object hash] == [self hash];
+}
+
+- (NSUInteger) hash {
+    return [self.nodeName hash] ^ [@(self.nodeOffset) hash];
+}
+
+- (BOOL) match:(FMRouterNode *)object {
+    if (![object isKindOfClass:self.class]) {
+        return NO;
+    }
+    if (self.isDynamicNode) {
+        return [@(self.nodeOffset) hash] == [@(object.nodeOffset) hash];
+    }
+    return [self hash] == [object hash];
 }
 
 @end

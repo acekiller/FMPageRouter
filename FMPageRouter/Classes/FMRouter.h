@@ -29,9 +29,6 @@
 
 - (instancetype) initWithPath:(NSString *)path;
 
-//判断给定的路径是否与当前路由匹配
-- (BOOL) matchedForPath:(NSString *)path;
-
 /*
  * 用于检查给定的路由是否与其存在路由检测冲突
  */
@@ -43,5 +40,11 @@
 
 - (NSDictionary *)dynamicNodeForPath:(NSString *)relativePath
                         removePrefix:(NSString *)prefix;
+
+#pragma mark - the Methods that has hash Encode
+//判断给定的路径是否与当前路由匹配
+- (BOOL) matchForPath:(NSString *)path;
+
+- (BOOL) match:(FMRouter *)object;
 
 @end
