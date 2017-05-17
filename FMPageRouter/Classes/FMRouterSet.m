@@ -58,9 +58,10 @@
 }
 
 - (FMRouter *) routerForPath:(NSString *)path {
-    for (FMRouter *router in routers) {
-        if ([router matchForPath:path]) {
-            return router;
+    FMRouter *router = [[FMRouter alloc] initWithPath:path];
+    for (FMRouter *t_router in routers) {
+        if ([t_router match:router]) {
+            return t_router;
         }
     }
     return nil;

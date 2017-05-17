@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "FMPageRouter.h"
+#import "FMTestSecondController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +19,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [[FMPageRouter shareInstance] registerPageControllerClass:FMTestSecondController.class
+                                         forRouterPathPattern:@"api/second/testpage"];
     return YES;
 }
 

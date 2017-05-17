@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "FMRouterExtensions.h"
+#import "NSObject+FMRouter.h"
 
 @interface FMPageRouter : NSObject
 
@@ -19,6 +20,8 @@
 
 - (void) addSupportRouterDomain:(NSString *)domain
                       forScheme:(NSString *)scheme;
+
+- (NSString *)appPathWithRelativePath:(NSString *)relativePath;
 
 /*
  *  path为
@@ -86,14 +89,14 @@
                                  failed:(void(^)(NSError *))failed;
 
 
-- (NSDictionary *)routerDynamicNodeParamsForController:(UIViewController *)controller;
+- (NSDictionary *)routerDynamicNodeParamsForObject:(NSObject *)object;
 
-- (NSDictionary *)routerQueryParamsForController:(UIViewController *)controller;
+- (NSDictionary *)routerQueryParamsForObject:(NSObject *)object;
 
-- (NSDictionary *)routerExtParamsForController:(UIViewController *)controller;
+- (NSDictionary *)routerExtParamsForObject:(NSObject *)object;
 
-- (NSDictionary *)routerAllParamsForController:(UIViewController *)controller;
+- (NSDictionary *)routerAllParamsForObject:(NSObject *)object;
 
-- (id)passNodeForController:(UIViewController *)controller;
+- (id)passNodeForObject:(NSObject *)object;
 
 @end

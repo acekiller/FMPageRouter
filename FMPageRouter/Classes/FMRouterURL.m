@@ -7,9 +7,13 @@
 //
 
 #import "FMRouterURL.h"
+#import "NSString+FMRouter.h"
+#import "NSArray+FMRouter.h"
+#import "NSDictionary+FMRouter.h"
 
 @interface FMRouterURL ()
 @property (nonatomic, strong) NSURL *url;
+@property (nonatomic, strong) NSString *relativePath;
 @end
 
 @implementation FMRouterURL
@@ -43,6 +47,36 @@
         return [NSURL fileURLWithPath:urlString];
     }
     return [NSURL URLWithString:urlString];
+}
+
+- (NSDictionary *)querys {
+    if (self.url.query.isEmpty) {
+        return nil;
+    }
+    
+    NSArray *queryItems = [self.url.query componentsSeparatedByString:@"&"];
+    if (queryItems.isEmpty) {
+        return nil;
+    }
+    NSMutableDictionary *querys = [NSMutableDictionary new];
+    for (NSString *queryItem in queryItems) {
+        NSArray *item = [queryItem componentsSeparatedByString:@"="];
+        if (item.count == 2) {
+            [querys setObject:item[1] forKey:item[0]];
+        }
+    }
+    if (querys.isEmpty) {
+        return nil;
+    }
+    return querys;
+}
+
+- (NSString *) host {
+    return self.url.host;
+}
+
+- (NSString *) scheme {
+    return self.url.scheme;
 }
 
 @end

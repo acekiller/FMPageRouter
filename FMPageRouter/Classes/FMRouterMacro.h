@@ -12,3 +12,4 @@
 #define FMPageRouterURLConflict 10001
 #define FMPageRouterURLIllegal 10002
 #define FMPageRouterURLMatchPagFailed 10003
+#define FMPageRouterURLIsNotViewController 10004

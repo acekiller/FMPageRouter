@@ -26,6 +26,7 @@ const NSString *routerPassNodeKey;
 @interface FMPageRouter () {
     NSString *_appScheme;
     NSString *_appDomain;
+    NSMutableDictionary *_domains;
 }
 @property (nonatomic, strong) FMRouterSet *routerSet;
 @end
@@ -44,7 +45,7 @@ const NSString *routerPassNodeKey;
     static id obj;
     static dispatch_once_t once;
     dispatch_once(&once, ^{
-        obj = [[self class] alloc];
+        obj = [[[self class] alloc] init];
     });
     return obj;
 }
@@ -52,6 +53,7 @@ const NSString *routerPassNodeKey;
 - (instancetype) init {
     self = [super init];
     if (self) {
+        _domains = [NSMutableDictionary new];
         NSDictionary *userInfo = [[NSBundle mainBundle] infoDictionary];
         _appScheme = userInfo[(NSString *)kCFBundleExecutableKey];
         _appDomain = userInfo[(NSString *)kCFBundleIdentifierKey];
@@ -62,17 +64,20 @@ const NSString *routerPassNodeKey;
 }
 
 - (void) addSupportRouterDomain:(NSString *)domain forScheme:(NSString *)scheme {
-//    TODO
+    NSAssert(domain != nil, @"domain can not null");
+    NSAssert(scheme != nil, @"scheme can not null");
+    [_domains setObject:domain forKey:scheme];
 }
 
-//+ (BOOL) isSupportRouterWithUrlString:(NSString *)urlString {
-////    TODO
-//    return YES;
-//}
-
 - (BOOL) isSupportRouterWithUrl:(FMRouterURL *)url {
-//    TODO
-    return YES;
+    NSString *host = [_domains objectForKey:url.scheme];
+    if (host.isEmpty) {
+        return NO;
+    }
+    if ([host isEqualToString:url.host]) {
+        return YES;
+    }
+    return NO;
 }
 
 - (NSString *)appDomain {
@@ -113,7 +118,7 @@ const NSString *routerPassNodeKey;
                        extParams:(NSDictionary *)extParams
                           failed:(void(^)(NSError *))failed {
     FMRouterURL *url = [[FMRouterURL alloc] initWithUrlString:routerURL];
-    if ([[self class] isSupportRouterWithUrl:url]) {
+    if (![self isSupportRouterWithUrl:url]) {
         return nil;
     }
     FMRouter *router = [[FMPageRouter shareInstance].routerSet routerForPath:url.relativePath];
@@ -125,7 +130,7 @@ const NSString *routerPassNodeKey;
                                  passNode:(id)passNode
                                    failed:(void(^)(NSError *))failed {
     FMRouterURL *url = [[FMRouterURL alloc] initWithUrlString:routerURL];
-    if ([[self class] isSupportRouterWithUrl:url]) {
+    if (![self isSupportRouterWithUrl:url]) {
         failed([NSError errorWithDomain:@"com.fantasy.FMPageRouter"
                                    code:FMPageRouterURLIllegal
                                userInfo:@{
@@ -141,9 +146,17 @@ const NSString *routerPassNodeKey;
                                userInfo:@{NSLocalizedDescriptionKey:@"无匹配的页面", @"url": routerURL}]);
         return nil;
     }
+    
+    if (![router.pageCls isSubclassOfClass:UIViewController.class]) {
+        failed([NSError errorWithDomain:@"com.fantasy.FMPageRouter"
+                                   code:FMPageRouterURLIsNotViewController
+                               userInfo:@{NSLocalizedDescriptionKey:@"无匹配的页面", @"url": routerURL}]);
+        return nil;
+    }
+    
     UIViewController *controller = [[router.pageCls alloc] init];
     [self bindDynamicNode:[router dynamicNodeForPath:url.relativePath]
-                   querys:[router allQueryForPath:url.relativePath]
+                   querys:[url querys]
                       ext:extParams
                  passNode:passNode
              toController:controller];
@@ -293,24 +306,24 @@ const NSString *routerPassNodeKey;
     return controller;
 }
 
-- (NSDictionary *)routerDynamicNodeParamsForController:(UIViewController *)controller {
-    return objc_getAssociatedObject(controller, &routerDynamicNodeParamsKey);
+- (NSDictionary *)routerDynamicNodeParamsForObject:(NSObject *)object {
+    return objc_getAssociatedObject(object, &routerDynamicNodeParamsKey);
 }
 
-- (NSDictionary *)routerQueryParamsForController:(UIViewController *)controller {
-    return objc_getAssociatedObject(controller, &routerDynamicNodeParamsKey);
+- (NSDictionary *)routerQueryParamsForObject:(NSObject *)object {
+    return objc_getAssociatedObject(object, &routerQueryParamsKey);
 }
 
-- (NSDictionary *)routerExtParamsForController:(UIViewController *)controller {
-    return objc_getAssociatedObject(controller, &routerDynamicNodeParamsKey);
+- (NSDictionary *)routerExtParamsForObject:(NSObject *)object {
+    return objc_getAssociatedObject(object, &routerExtParamsKey);
 }
 
-- (NSDictionary *)routerAllParamsForController:(UIViewController *)controller {
-    return objc_getAssociatedObject(controller, &routerDynamicNodeParamsKey);
+- (NSDictionary *)routerAllParamsForObject:(NSObject *)object {
+    return objc_getAssociatedObject(object, &routerAllParamsKey);
 }
 
-- (id)passNodeForController:(UIViewController *)controller {
-    return objc_getAssociatedObject(controller, &routerPassNodeKey);
+- (id)passNodeForObject:(NSObject *)object {
+    return objc_getAssociatedObject(object, &routerPassNodeKey);
 }
 
 @end

@@ -18,6 +18,7 @@
 @property (nonatomic, strong) NSString *path;
 @property (nonatomic, strong) NSArray *nodes;
 @property (nonatomic, strong) Class pageCls;
+@property (nonatomic, strong) NSString *queryString;
 
 @end
 
@@ -32,7 +33,13 @@
                          page:(Class)pageCls {
     self = [super init];
     if (self) {
-        self.path = path;
+        NSArray *paths = [path componentsSeparatedByString:@"?"];
+        if (paths.count > 0) {
+            self.path = [paths firstObject];
+        }
+        if (paths.count == 2) {
+            self.queryString = [paths lastObject];
+        }
         self.nodes = [self nodesForPath];
         self.nodeLength = [self.nodes count];
         if (self.nodeLength == 0 || [self isAllDynamicPath:self.nodes]) {
@@ -181,6 +188,28 @@
 
 - (BOOL) match:(FMRouter *)object {
     return [self matchForRouter:object];
+}
+
+- (NSDictionary *)query {
+    if (self.queryString.isEmpty) {
+        return nil;
+    }
+    
+    NSArray *queryItems = [self.queryString componentsSeparatedByString:@"&"];
+    if (queryItems.isEmpty) {
+        return nil;
+    }
+    NSMutableDictionary *querys = [NSMutableDictionary new];
+    for (NSString *queryItem in queryItems) {
+        NSArray *item = [queryItem componentsSeparatedByString:@"="];
+        if (item.count == 2) {
+            [querys setObject:item[1] forKey:item[0]];
+        }
+    }
+    if (querys.isEmpty) {
+        return nil;
+    }
+    return querys;
 }
 
 @end

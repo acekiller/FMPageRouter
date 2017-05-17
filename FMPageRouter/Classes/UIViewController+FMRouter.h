@@ -7,14 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FMPageRouter.h"
 
 @interface UIViewController (FMRouter)
-
-@property (nonatomic, readonly) NSDictionary *routerQuery;
-@property (nonatomic, readonly) NSDictionary *routerExtParams;
-@property (nonatomic, readonly) NSDictionary *routerDynamicNodes;
-@property (nonatomic, readonly) NSDictionary *allRouterParams;
-@property (nonatomic, weak, readonly) id passNode;
 
 ////仅单路由匹配模式支持,当+ (NSString *) routerPath 配置的routerPath不为空时，+ (NSArray *) routerPaths的配置将不会生效。
 //+ (NSString *) routerPathPattern;

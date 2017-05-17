@@ -7,7 +7,6 @@
 //
 
 #import "UIViewController+FMRouter.h"
-#import "FMPageRouter.h"
 
 @implementation UIViewController (FMRouter)
 
@@ -50,26 +49,6 @@
 //                                forRouterPathPattern:path];
 //    }
 //}
-
-- (NSDictionary *)routerQuery {
-    return [[FMPageRouter shareInstance] routerQueryParamsForController:self];
-}
-
-- (NSDictionary *)routerDynamicNodes {
-    return [[FMPageRouter shareInstance] routerDynamicNodeParamsForController:self];
-}
-
-- (NSDictionary *)routerExtParams {
-    return [[FMPageRouter shareInstance] routerExtParamsForController:self];
-}
-
-- (NSDictionary *)allRouterParams {
-    return [[FMPageRouter shareInstance] routerAllParamsForController:self];
-}
-
-- (id) passNode {
-    return [[FMPageRouter shareInstance] passNodeForController:self];
-}
 
 #pragma mark - Controller Router Method
 

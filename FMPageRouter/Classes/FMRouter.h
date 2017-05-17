@@ -13,6 +13,7 @@
 
 @property (nonatomic, readonly) NSUInteger nodeLength;
 @property (nonatomic, readonly) NSString *path;
+@property (nonatomic, readonly) NSDictionary *query;
 @property (nonatomic, readonly) NSArray *nodes;
 @property (nonatomic, readonly) Class pageCls;
 
