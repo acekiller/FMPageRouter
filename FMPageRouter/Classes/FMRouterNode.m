@@ -7,6 +7,7 @@
 //
 
 #import "FMRouterNode.h"
+#import "FMRouterMacro.h"
 static NSMutableSet *patterns;
 
 @implementation FMRouterNode
@@ -92,7 +93,7 @@ static NSMutableSet *patterns;
 }
 
 - (NSUInteger) hash {
-    return [self.nodeName hash] ^ [@(self.nodeOffset) hash];
+    return ROTATEHASH([self.nodeName hash], [@(self.nodeOffset) hash]);
 }
 
 - (BOOL) match:(FMRouterNode *)object {

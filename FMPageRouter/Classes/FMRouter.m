@@ -7,6 +7,7 @@
 //
 
 #import "FMRouter.h"
+#import "FMRouterMacro.h"
 #import "FMRouterNode.h"
 #import "NSString+FMRouter.h"
 #import "NSArray+FMRouter.h"
@@ -152,7 +153,8 @@
     }
     NSInteger hashValue = [self.nodes[0] hash];
     for (NSInteger i = 1; i < [self.nodes count]; i++) {
-        hashValue ^= [self.nodes[i] hash];
+        hashValue = ROTATEHASH(hashValue, [self.nodes[i] hash]);
+//        hashValue ^= [self.nodes[i] hash];
     }
     return hashValue;
 }
