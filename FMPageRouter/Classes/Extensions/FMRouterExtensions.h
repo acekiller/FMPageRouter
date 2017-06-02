@@ -9,3 +9,5 @@
 #import "NSNull+FMRouter.h"
 #import "NSString+FMRouter.h"
 #import "NSArray+FMRouter.h"
+#import "NSDictionary+FMRouter.h"
+#import "NSObject+FMRouter.h"
